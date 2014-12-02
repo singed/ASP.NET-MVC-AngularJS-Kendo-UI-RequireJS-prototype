@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASP.NET MVC + AngularJS + Kendo UI + RequireJS example</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="wrapper">
+        @Html.Partial("_Navigation")
+        <div id="page-wrapper" ng-controller="mainController">
+            <div id="app"></div>
+            @RenderBody()
+        </div>
+        <footer></footer>
+    </div>
+
+   
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/kendo")
+    <script src="@Url.Content("~/scripts/libs/require.js")" data-main="/scripts/app/main"> </script>
+
+    <!-- modules -->
+    <script src="~/Scripts/libs/plugins/metisMenu/metisMenu.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
